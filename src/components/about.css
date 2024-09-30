@@ -1,0 +1,40 @@
+/* src/About.css */
+.about-container {
+    padding: 40px;
+    background-color: #f9f9f9;
+    min-height: 100vh;
+  }
+  
+  .about {
+    max-width: 100vw;
+    margin: 0 auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .about h1 {
+    font-size: 3rem;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .about p {
+    font-size: 1.25rem;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 20px;
+  }
+  img{
+    width: 499px;
+}
+.about-image{
+    padding-top: 105px;
+    
+  }
+  .about-detail{
+    width: 60%;
+  }

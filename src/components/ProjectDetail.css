@@ -1,0 +1,258 @@
+.project-detail-page {
+    /* background-image: url('https://images.unsplash.com/photo-1727162334483-64741c31f45e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwyNnx8fGVufDB8fHx8fA%3D%3D'); */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh; /* Ensure the background covers the full height of the page */
+    padding: 20px;
+}
+.project-detail-page .container{
+    /* From Uiverse.io by csemszepp */ 
+
+    width: 100%;
+    height: 100%;
+    --s: 200px; /* control the size */
+    --c1: #1d1d1d;
+    --c2: #4e4f51;
+    --c3: #3c3c3c;
+  
+    background: repeating-conic-gradient(
+          from 30deg,
+          #0000 0 120deg,
+          var(--c3) 0 180deg
+        )
+        calc(0.5 * var(--s)) calc(0.5 * var(--s) * 0.577),
+      repeating-conic-gradient(
+        from 30deg,
+        var(--c1) 0 60deg,
+        var(--c2) 0 120deg,
+        var(--c3) 0 180deg
+      );
+    background-size: var(--s) calc(var(--s) * 0.577);
+  }
+  
+
+.project-detail h1 {
+    color: bisque;
+    text-align: center;
+    font-size: 55px;
+}
+.project-detail h3{
+    font-size: 31px;
+    color: blanchedalmond;
+}
+.project-info h2 {
+    color: aliceblue;
+    font-size: 40px;
+    margin-top: 17px;
+}
+.project-detail h4{
+    font-size: 33px;
+
+}
+p {
+    font-size: 25px;
+    color: bisque;
+    font-weight: 500;
+}
+
+.button-28 {
+    appearance: none;
+    background-color: transparent;
+    border: 2px solid #1A1A1A;
+    border-radius: 15px;
+    box-sizing: border-box;
+    color: #3B3B3B;
+    cursor: pointer;
+    font-family: Roobert, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 16px;
+    font-weight: 600;
+    padding: 16px 24px;
+    text-align: center;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+    width: 100%;
+    will-change: transform;
+}
+
+.button-28:hover {
+    color: #fff;
+    background-color: #1A1A1A;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    transform: translateY(-2px);
+}
+
+.button-28:active {
+    box-shadow: none;
+    transform: translateY(0);
+}
+
+.edit-dlt {
+    display: flex;
+    justify-content: space-around;
+}
+
+.project-detail {
+    max-width: 1088px;
+    margin: 40px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(8.5px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.edit-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.form-input {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 18px;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.form-input:focus {
+    border-color: #aaa;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: antiquewhite;
+    font-size: x-large;
+    font-weight: 600;
+    border: 2px solid
+}
+
+.btn-primary {
+    background-color: #4CAF50;
+    color: #fff;
+    width: 265px;
+    margin-bottom: 30px;
+}
+
+.btn-secondary {
+    background-color: #999;
+    color: #fff;
+    width: 265px;
+}
+
+.btn-danger {
+    background-color: #FF69B4;
+    color: #fff;
+}
+
+.project-info {
+    padding: 20px;
+}
+
+.project-info h2 {
+    margin-top: 0;
+}
+
+.note {
+    background: rgba(255, 255, 255, 0.15);
+    /* margin-bottom: 20px; */
+    padding: 15px;
+    border: 0px solid #ddd;
+    /* border-radius: 8px; */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-size: 18px;
+    color: black;
+    padding-inline: 64px;
+    padding-block: 33px;
+}
+
+/* Every 1st note (default background) */
+.note:nth-child(1n) {
+    background: #8f9a9e;
+}
+
+/* Every 2nd note */
+.note:nth-child(2n) {
+    background: #c0d5e8; /* Light Coral */
+}
+
+.note p {
+    margin-bottom: 10px;
+    color: #1A1A1A;
+}
+
+.note small {
+    color: #1A1A1A;
+    /* color: #ddd; */
+}
+
+/* Animations */
+.project-detail {
+    animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.edit-form, .note {
+    animation: slideIn 0.5s;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .project-detail {
+        margin: 20px;
+    }
+
+    .form-input {
+        font-size: 16px;
+    }
+
+    .btn {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .project-detail {
+        margin: 10px;
+        padding: 15px;
+    }
+
+    .form-input {
+        font-size: 14px;
+    }
+
+    .btn {
+        font-size: 12px;
+        padding: 8px 16px;
+    }
+}

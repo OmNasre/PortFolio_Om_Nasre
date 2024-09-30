@@ -1,0 +1,48 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: white;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  width: 44%;
+  justify-content: space-between;
+  font-weight: 800;
+}
+
+.nav-links li {
+  margin-left: 20px;
+  position: relative;  /* Enable positioning for the underline effect */
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: black;
+  font-size: 22px;
+  position: relative;  /* Position for the pseudo-element */
+}
+
+.nav-links a::after {
+  content: '';  /* Create a pseudo-element */
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -5px;  /* Adjust position below the text */
+  height: 2px;  /* Thickness of the underline */
+  background-color: black;  /* Color of the underline */
+  transform: scaleX(0);  /* Start hidden */
+  transition: transform 0.3s ease;  /* Transition effect */
+}
+
+.nav-links a:hover::after {
+  transform: scaleX(1);  /* Scale to full width on hover */
+}

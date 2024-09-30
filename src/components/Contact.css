@@ -1,0 +1,99 @@
+/* Wrapper for the contact component */
+.contact-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    background-color: #f4f4f4;
+    padding-top: 200px;
+  }
+  
+  /* Main container for the form and info section */
+  .contact-container {
+    display: flex;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 800px;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  
+  /* Form section styling */
+  .form-section {
+    flex: 1;
+    padding: 20px;
+    padding-right: 70px;
+  }
+  
+  .form-section h2 {
+    font-size: 28px;  /* Increased from 24px to 28px */
+    margin-bottom: 20px;
+  }
+  
+  .form-section form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-section input, .form-section textarea {
+    width: 100%;
+    padding: 12px; /* Slightly larger padding */
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 18px; /* Increased input and textarea font size */
+  }
+  
+  .form-section button {
+    padding: 12px 24px; /* Slightly larger button padding */
+    font-size: 18px;  /* Increased button font size */
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .form-section button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Info section styling */
+  .info-section {
+    background-color: #007bff;
+    color: white;
+    flex: 0.8;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .info-section h2 {
+    font-size: 28px;  /* Increased from 24px to 28px */
+    margin-bottom: 20px;
+  }
+  
+  .info-section p {
+    margin: 10px 0;
+    font-size: 18px;  /* Increased paragraph font size */
+    line-height: 1.6;  /* Adjusted line height for better readability */
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .contact-container {
+      flex-direction: column;
+    }
+  
+    .form-section, .info-section {
+      flex: none;
+      width: 100%;
+    }
+  
+    .info-section {
+      text-align: center;
+    }
+  }
+  
