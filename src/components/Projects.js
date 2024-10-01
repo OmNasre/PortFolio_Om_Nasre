@@ -1,59 +1,71 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { ProjectService } from '../apiService';  // Adjust the path to your service
 import { useNavigate } from 'react-router-dom'; // Import useNavigate for navigation
 import './Projects.css';  // Make sure this path is correct
 
 function Projects() {
-  // Static list of projects (replace API call)
-  const staticProjects = [
-    {
-      id: 4,
-      title: "My Portfolio",
-      description: "Welcome to my personal developer portfolio, built to showcase my skills, projects, and expertise in full-stack development and data science. This portfolio is developed using React for the frontend and Spring Boot for backend integration, creating a seamless user experience while displaying my technical proficiency.",
-      githubLink: "https://github.com/OmNasre/PortFolio_Om_Nasre",
-      startDate: "2023-09-27",
-      dueDate: "2023-12-31",
-      status: "COMPLETED",
-      notes: [
-        { noteText: "40% work done", timestamp: "2024-09-27T11:28:12.177+00:00", noteId: 7 },
-        { noteText: "Added Sign in feature", timestamp: "2024-09-27T17:04:02.414+00:00", noteId: 8 },
-        { noteText: "Reviewed by Guide", timestamp: "2024-09-27T17:04:09.428+00:00", noteId: 9 },
-        { noteText: "Hasshhh ", timestamp: "2024-09-27T17:12:21.079+00:00", noteId: 10 },
-      ],
-      projectId: 4
-    },
-    {
-      id: 5,
-      title: "EduSync",
-      description: "EduSync is a career guidance platform designed specifically for students after completing their 10th-grade education. Built using Django for backend management and HTML/CSS for a sleek, responsive frontend, EduSync offers personalized and comprehensive advice to help students make informed decisions about their academic and career paths.",
-      githubLink: "https://github.com/OmNasre/EduSync",
-      startDate: "2023-09-27",
-      dueDate: "2023-12-31",
-      status: "COMPLETED",
-      notes: [{ noteText: "Why it is too tough?", timestamp: "2024-09-28T10:25:58.470+00:00", noteId: 11 }],
-      projectId: 5
-    },
-    {
-      id: 6,
-      title: "Insta-Clone",
-      description: "The Instagram Clone project is built using Spring Boot for the backend and HTML, CSS for the frontend. It replicates core functionalities of Instagram, such as user registration, post management, likes, comments, and an admin panel for user and post management. The key feature of this application is a responsive and minimalist design that mimics Instagram’s user experience.",
-      githubLink: "https://github.com/OmNasre/Instagram-Clone",
-      startDate: "2023-09-20",
-      dueDate: "2023-09-30",
-      status: "COMPLETED",
-      location: "D:\\Java FS\\instaClone",
-      notes: [],
-      projectId: 6
-    }
-  ];
-
-  const [projects] = useState(staticProjects); // Initialize with static data
+  const [projects, setProjects] = useState([]);
+  const [loading, setLoading] = useState(true); // Add loading state
+  const [error, setError] = useState(null); // Add error state
   const navigate = useNavigate(); // Initialize useNavigate for navigation
+
+  useEffect(() => {
+    // Fetch all projects on component mount
+    ProjectService.getAllProjects()
+      .then(data => {
+        setProjects(data);
+        setLoading(false); // Stop loading when data is fetched
+      })
+      .catch(error => {
+        console.error('Error fetching projects:', error);
+        setError('Failed to fetch projects.');
+        setLoading(false); // Stop loading even if there's an error
+      });
+  }, []);
+  const handle404 = () => {
+    navigate('/');
+  }
+
+  if (loading) {
+    return <div class="loader-container">
+    <div class="loader"></div>
+  </div> // Show loading indicatorc
+  }
+
+  if (error) {
+    return <section class="page_404">
+    <div class="container">
+      <div class="row">	
+      <div class="col-sm-12 ">
+      <div class="col-sm-10 col-sm-offset-1  text-center">
+      <div class="four_zero_four_bg">
+        <h1 class="text-center ">404</h1>
+      
+      
+      </div>
+      
+      <div class="contant_box_404">
+      <h3 class="h2">
+      Look like you're lost
+      </h3>
+      
+      <p>{error}</p>
+      
+      <a onClick={handle404} class="link_404">Go to Home</a>
+    </div>
+      </div>
+      </div>
+      </div>
+    </div>
+  </section> // Show error message
+  }
 
   // Function to handle project card click
   const handleProjectClick = (projectId) => {
     console.log("Navigating to project with ID:", projectId); // Debugging line
     navigate(`/projects/${projectId}`); // Navigate to project detail page
   };
+  
 
   return (
     <div className="ag-format-container">
@@ -71,7 +83,7 @@ function Projects() {
                 </div>
                 
                 <div className="ag-courses-item_date-box">
-                  <a href={project.githubLink}><button className='button-80'>GitHub >></button></a> 
+                 < a href={project.githubLink}><button  className='button-80'>GitHub >></button></a> 
                 </div>
               </a>
             </div>
@@ -81,5 +93,5 @@ function Projects() {
     </div>
   );
 }
-
+ 
 export default Projects;
